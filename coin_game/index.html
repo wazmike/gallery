@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Coin HTML5 Playable Ad</title>
+<meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+<meta name="coin_click" content="yes" />
+<meta name="ad.size" content="width=100%,height=100%">
+<meta charset="utf-8" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="assets/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+<style>
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    background: rgb(152,51,81);
+	background: radial-gradient(circle, rgba(152,51,81,1) 0%, rgba(175,62,87,1) 100%);
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+
+#gamebox {
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+#container {
+	width: 50vh;
+	height: 90vh;
+	margin: auto;
+	overflow: hidden;
+}
+
+#money {
+	position: relative;
+	padding-top: 0.6vh;
+	left: 20vh;
+	margin: auto;
+	color: white;
+	font-size: 6vh;
+	font-weight: bold;
+	text-shadow: #7a1630 0 0 6px;
+}
+
+#box_back {
+	position: relative;
+	width: 36.38vh;
+	height: 90vh;
+	background-image: url(assets/background-all.png);
+	background-size: 100% 100%;
+	background-position: center top;
+    background-repeat: no-repeat;
+	margin: auto;
+    overflow: hidden; /* clearfix */
+}
+
+#top_scratch {
+	position: absolute;
+	top: 20vh;
+	left: 6.3vh;
+	width: 23.7vh;
+	height: 17.5vh;
+	background-image: url(assets/bilet_top2.png);
+	background-size: 100% 100%;
+	background-position: center top;
+    background-repeat: no-repeat;
+	margin: auto;
+	z-index: 5;
+}
+
+#mid_scratch {
+	position: absolute;
+	top: 39.5vh;
+	left: 6.3vh;
+	width: 23.7vh;
+	height: 17.5vh;
+	background-image: url(assets/bilet_top2.png);
+	background-size: 100% 100%;
+	background-position: center top;
+    background-repeat: no-repeat;
+	margin: auto;
+	z-index: 6;
+}
+
+#bot_scratch {
+	position: absolute;
+	top: 58.8vh;
+	left: 6.3vh;
+	width: 23.7vh;
+	height: 17.5vh;
+	background-image: url(assets/bilet_top2.png);
+	background-size: 100% 100%;
+	background-position: center top;
+    background-repeat: no-repeat;
+	margin: auto;
+	z-index: 7;
+}
+
+#banner {
+	position: relative;
+	top: -73vh;
+	left: 0;
+	width: 44vh;
+	height: 26vh;
+	background-image: url(assets/pop_up_background.png);
+	background-size: 100% 100%;
+	background-position: center top;
+    background-repeat: no-repeat;
+	margin: auto;
+	z-index: 7;
+	visibility: hidden;
+}
+
+#banner p {
+	color: white;
+	font-size: 4vh;
+	font-weight: bold;
+	text-shadow: #7a1630 0 0 6px;
+	text-align: center;
+	padding-top: 2.8vh;
+}
+
+#pop_button {
+	position: relative;
+	top: 2vh;
+	left: 0;
+	width: 20.7vh;
+	height: 7.44vh;
+	background-image: url(assets/install_button.png);
+	background-size: 100% 100%;
+	background-position: center top;
+    background-repeat: no-repeat;
+	margin: auto;
+	z-index: 8;	
+}
+
+#touch {
+	position: relative;
+	top: -105vh;
+	left: 1vh;
+	width: 20vh;
+	height: 20vh;
+	background-image: url(assets/touch.png);
+	background-size: 100% 100%;
+	background-position: center top;
+    background-repeat: no-repeat;
+	margin: auto;
+	z-index: 10;
+	animation: finger 1s infinite ease-in-out;
+}
+
+#play {
+	position: absolute;
+	top: 34vh;
+	left: 23vh;
+	width: 40vh;
+	height: 20vh;
+	background-image: url(assets/play.png);
+	background-size: 100% 100%;
+	background-position: center top;
+    background-repeat: no-repeat;
+	margin: auto;
+	z-index: 11;
+}
+
+.view {
+	position: relative;
+	top: -73vh;
+	left: 0;
+	width: 53.7vh;
+	height: 28.71vh;
+	background-image: url(assets/pop_up_background.png);
+	background-size: 100% 100%;
+	background-position: center top;
+    background-repeat: no-repeat;
+	margin: auto;
+	z-index: 7;
+	visibility: visible;
+}
+
+#ribbon	{
+	position: relative;
+	top: -87vh;
+	width: 49.7vh;
+	height: 9.67vh;
+	background-image: url(assets/ribbon.png);
+	margin: auto;
+	background-size: 100% 100%;
+}
+
+#banner_bottom	{
+	position: relative;
+	top: 81.8vh;
+	left: 0;
+	width: 36.38vh;
+	height: 8.64vh;
+	background-image: url(assets/bottom_bar-all.png);
+	margin: auto;
+	background-size: 100% 100%;
+}
+
+#canvas {
+	margin: auto;
+    margin: auto;
+    z-index: 1;
+    min-width: 100%;
+    height: 100%;
+}
+
+.animate {
+	animation: splash 2s ease-in-out;
+}
+
+.del {
+	display: none;
+}
+
+@keyframes splash {
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+
+@keyframes finger {
+	0% {top: -110vh; transform: scale(1.0);}
+	50% {top: -105vh; transform: scale(1.2);}
+	100% {top: -110vh; transform: scale(1.0);}
+}
+
+</style>
+
+
+<div id="gamebox">
+	<div id="container">
+		<div id="box_back">
+			<div id="top_scratch"></div>
+			<div id="mid_scratch"></div>
+			<div id="bot_scratch"></div>
+			<div id="banner_bottom" onclick="ads()"></div>
+		</div>
+		<div id="ribbon"><div id="money">0$</div></div>
+		<div id="banner">
+			<p>To continue, install the aplication</p>
+			<div id="pop_button" onclick="FbPlayableAd.onCTAClick()"></div>
+		</div>
+		<div id="touch"></div>
+	</div>
+</div>
+
+
+<script charset="utf-8" type="text/javascript">	
+
+	var score = 0;
+	var sound_coin = new Audio('assets/magic.mp3');
+	var sound_coin1 = new Audio('assets/magic.mp3');
+	var sound_coin2 = new Audio('assets/magic.mp3');
+	var sound_fon = new Audio('assets/fon.mp3');
+
+	mid_scratch.onclick = function() {
+		var block = document.getElementById("mid_scratch");
+		block.classList.add("animate");
+		block.classList.add("del");
+		score += 100;
+		sound_coin1.play();
+		document.getElementById("money").innerHTML = score + "$";
+	};
+
+	bot_scratch.onclick = function() {
+		var block = document.getElementById("bot_scratch");
+		block.classList.add("animate");
+		block.classList.add("del");
+		score += 200;
+		sound_coin2.play();
+		document.getElementById("money").innerHTML = score + "$";
+	};
+
+	touch.onclick = function() {
+		sound_fon.play();
+		var block = document.getElementById("touch");
+		block.classList.add("del");
+		var block = document.getElementById("top_scratch");
+		block.classList.add("animate");
+		block.classList.add("del");
+		score += 500;
+		sound_coin.play();
+		document.getElementById("money").innerHTML = score + "$";
+	};
+
+	banner_bottom.onclick = function() {
+		var block = document.getElementById('banner');
+		block.style.visibility = "inherit";
+		block.classList.add("view");
+	};
+
+	function ads(){
+		var block = document.getElementById('banner');
+		block.style.visibility = "inherit";
+		block.classList.add("view");
+	}
+
+
+	var ww = document.getElementById("gamebox");
+		ww.addEventListener("mousedown", function(e){
+			var block = document.getElementById("touch");
+			if (score >= 800) {
+			var block = document.getElementById('banner');
+			block.style.visibility = "inherit";
+			block.classList.add("view");  		
+		}
+	});
+
+</script>
+</body>
+</html>
